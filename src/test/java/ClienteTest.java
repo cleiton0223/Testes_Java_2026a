@@ -1,4 +1,4 @@
-import atividadesentrega.aula01.Aula03.Cliente;
+import atividadesentrega.Aula03.Cliente;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

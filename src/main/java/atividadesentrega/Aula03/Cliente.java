@@ -1,4 +1,4 @@
-package atividadesentrega.aula01.Aula03;
+package atividadesentrega.Aula03;
 
 public class Cliente {
     private String nome;
