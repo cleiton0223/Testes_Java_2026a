@@ -1,5 +1,4 @@
 import atividadesentrega.aula04.Retangulo;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
