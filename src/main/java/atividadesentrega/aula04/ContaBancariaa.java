@@ -7,17 +7,14 @@ public class ContaBancariaa {
     private double saldo;
 
     // Construtor para uma conta com saldo inicial.
-    public ContaBancariaa(String titular,
-                          String numeroConta,
-                          double saldoInicial) {
+    public ContaBancariaa(String titular,String numeroConta,double saldoInicial) {
         this.titular = titular;
         this.numeroConta = numeroConta;
         this.saldo = saldoInicial;
     }
 
     // Sobrecarga: conta sem valor começa com saldo zero.
-    public ContaBancariaa(String titular,
-                          String numeroConta) {
+    public ContaBancariaa(String titular, String numeroConta) {
         this(titular, numeroConta, 0.0);
     }
     public void depositar(double valor) {
