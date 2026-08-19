@@ -21,8 +21,7 @@ public class RetanguloTest {
     @Test
     void larguraInvalidaDeveLancarExcecao() {
         // Arrange & Act / Assert
-        assertThrows(IllegalArgumentException.class, () -> new Retangulo(-1, 5.0)
-        );
+        assertThrows(IllegalArgumentException.class, () -> new Retangulo(-1, 5.0));
     }
 
     @Test

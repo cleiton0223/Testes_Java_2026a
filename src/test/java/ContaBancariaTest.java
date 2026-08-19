@@ -11,9 +11,7 @@ class ContaBancariaTest {
     @Test
     void depositarValorValidoDeveAumentarSaldo() {
         // ARRANGE: conta com saldo inicial zero.
-        ContaBancariaa conta = new ContaBancariaa(
-                "Maria", "123"
-        );
+        ContaBancariaa conta = new ContaBancariaa("Maria", "123");
 
         // ACT: executa a ação testada.
         conta.depositar(100.0);
@@ -24,20 +22,15 @@ class ContaBancariaTest {
     @Test
     void sacarValorMaiorQueSaldoDeveLancarExcecao() {
         // ARRANGE: a nova conta começa com saldo 0.0.
-        ContaBancariaa conta = new ContaBancariaa(
-                "Maria", "123"
-        );
+        ContaBancariaa conta = new ContaBancariaa("Maria", "123");
 
         // ACT + ASSERT: executa sacar() e captura a exceção.
         IllegalArgumentException excecao = assertThrows(
                 IllegalArgumentException.class,
-                () -> conta.sacar(50.0)
-        );
+                () -> conta.sacar(50.0));
 
         // A exceção ocorreu e foi capturada, então esta linha roda.
-        System.out.println(
-                "Mensagem capturada: " + excecao.getMessage()
-        );
+        System.out.println("Mensagem capturada: " + excecao.getMessage());
 
         // A mensagem deve coincidir exatamente com a classe.
         assertEquals("Saldo insuficiente", excecao.getMessage());
@@ -45,9 +38,7 @@ class ContaBancariaTest {
     @Test
     void sacarComSaldoDisponivelDeveReduzirSaldo() {
         // ARRANGE: prepara saldo suficiente.
-        ContaBancariaa conta = new ContaBancariaa(
-                "Maria", "123"
-        );
+        ContaBancariaa conta = new ContaBancariaa("Maria", "123");
         conta.depositar(100.0);
 
         // ACT + ASSERT: deve terminar normalmente.
@@ -61,32 +52,20 @@ class ContaBancariaTest {
         ContaBancariaa conta = new ContaBancariaa("Maria", "123");
 
         IllegalArgumentException excecao = assertThrows(
-                IllegalArgumentException.class,
-                () -> conta.depositar(0.0)
-        );
+                IllegalArgumentException.class, () -> conta.depositar(0.0));
 
-        assertEquals(
-                "O valor do depósito deve ser maior que zero.",
-                excecao.getMessage()
-        );
+        assertEquals("O valor do depósito deve ser maior que zero.", excecao.getMessage());
     }
     @Test
     void sacarValorNegativoDeveLancarExcecao() {
-        ContaBancariaa conta = new ContaBancariaa(
-                "Maria", "123", 100.0
-        );
+        ContaBancariaa conta = new ContaBancariaa("Maria", "123", 100.0);
 
-        assertThrows(
-                IllegalArgumentException.class,
-                () -> conta.sacar(-20.0)
-        );
+        assertThrows(IllegalArgumentException.class, () -> conta.sacar(-20.0));
     }
     @Test
     void construtorDeveInicializarTodosOsAtributos() {
         // ARRANGE + ACT
-        ContaBancariaa conta = new ContaBancariaa(
-                "João", "99999-9"
-        );
+        ContaBancariaa conta = new ContaBancariaa("João", "99999-9");
 
         // ASSERT: todas as verificações serão executadas.
         assertAll(

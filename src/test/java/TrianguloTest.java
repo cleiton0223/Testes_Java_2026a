@@ -22,8 +22,7 @@ public class TrianguloTest {
     @Test
     void ladoNegativoDeveLancarExcecao() {
         // Arrange, Act & Assert
-        Assertions.assertThrows(IllegalArgumentException.class, () -> new Triangulo(-1, 4, 5)
-        );
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new Triangulo(-1, 4, 5));
     }
 
     @Test
@@ -35,7 +34,6 @@ public class TrianguloTest {
         assertAll(
                 () -> assertEquals(3.0, t.getLadoA()),
                 () -> assertEquals(4.0, t.getLadoB()),
-                () -> assertEquals(5.0, t.getLadoC())
-        );
+                () -> assertEquals(5.0, t.getLadoC()));
     }
 }

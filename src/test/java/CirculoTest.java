@@ -31,9 +31,7 @@ public class CirculoTest {
     @Test
     void raioInvalidoDeveLancarExcecao() {
         // Arrange, Act & Assert
-        Assertions.assertThrows(
-                IllegalArgumentException.class, () -> new Circulo(0)
-        );
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new Circulo(0));
     }
 
     @Test
