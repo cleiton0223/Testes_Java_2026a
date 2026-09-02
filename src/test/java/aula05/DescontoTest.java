@@ -13,7 +13,6 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.jupiter.api.Assertions.*;
 
 class DescontoTest {
-    // Os testes entram dentro desta classe.
 
     @ParameterizedTest(name = "caso {index}: R$ {0} - {1}% = R$ {2}")
     @CsvSource({
