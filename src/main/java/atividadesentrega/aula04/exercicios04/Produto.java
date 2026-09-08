@@ -7,7 +7,7 @@ public class Produto {
     private int quantidadeEstoque;
 
     public Produto(String nome, double preco, int quantidadeEstoque) {
-        if(preco <=0){
+        if(preco <= 0){
             throw new IllegalArgumentException("O preço deve ser maior que zero.");
         }
         if(quantidadeEstoque <0){
