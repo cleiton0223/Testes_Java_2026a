@@ -1,6 +1,6 @@
 package aula05;
 
-import atividadesentrega.aula05.CalculadoraFrete;
+import atividadesentrega.aula05.exercicios05.CalculadoraFrete;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
