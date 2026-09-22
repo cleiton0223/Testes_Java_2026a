@@ -1,6 +1,7 @@
 package aula05.reforco05;
 
 import atividadesentrega.aula05.reforco05.ValidadorUsuario;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -23,5 +24,12 @@ public class ValidadorUsuarioTest {
     public void validarNomesAusentesEEspacos(String nome) {
         assertFalse(ValidadorUsuario.nomeValido(nome));
     }
+    @DisplayName("Nomes nulos ou vazios devem ser rejeitados")
+    @ParameterizedTest(name = "Ausência de valor: {0}")
+    @NullAndEmptySource
+    void valoresAusentesDevemRetornaFalso(String nome){
+        assertFalse(ValidadorUsuario.nomeValido(nome));
+    }
+
 }
 
