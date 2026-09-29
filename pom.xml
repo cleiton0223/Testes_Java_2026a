@@ -14,9 +14,12 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <junit.version>5.12.2</junit.version>
+        <mockito.version>5.18.0</mockito.version>
     </properties>
+
     <dependencies>
 
+        <!-- JUnit 5: @Test e asserts -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
@@ -24,6 +27,29 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Mockito: mock(), verify(), never(), times()... (usado no MockTest) -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Necessário para rodar os testes com "mvn test" -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <!-- Evita erro do Byte Buddy (usado pelo Mockito) em JDKs muito novos, como o 26 -->
+                    <argLine>-Dnet.bytebuddy.experimental=true</argLine>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
